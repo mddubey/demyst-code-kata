@@ -1,0 +1,22 @@
+{
+  "name": "todo-dashboard",
+  "version": "1.0.0",
+  "description": "Displays ToDos",
+  "main": "main.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mddubey/demyst-code-kata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mddubey/demyst-code-kata/issues"
+  },
+  "homepage": "https://github.com/mddubey/demyst-code-kata#readme"
+}
