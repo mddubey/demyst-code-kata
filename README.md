@@ -30,6 +30,14 @@ This will take sometime to build.
 * docker exec -it todo-dashboard sh -c "node src/todo-dashboard.js 5"
 ### Get 5 even ToDos (using npm bin script)
 * docker exec -it todo-dashboard sh -c  "node . 5"
+### Install as global cli package
+* docker exec -it todo-dashboard sh -c  "npm install -g ."
+### Run as global cli, fetch 20 todos
+* docker exec -it todo-dashboard sh -c  "todo-dashboard"
+### Run as global cli, fetch 5 todos
+* docker exec -it todo-dashboard sh -c  "todo-dashboard 5"
+### Cleanup 
+* docker stop todo-dashboard && docker rm todo-dashboard && docker image rm todo-dashboard
 
 The goal of the project is to build a command line tool.
 
