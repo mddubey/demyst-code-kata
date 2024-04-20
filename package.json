@@ -4,10 +4,16 @@
   "description": "Displays ToDos",
   "main": "main.js",
   "dependencies": {
+    "axios": "^1.6.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"    
+  },
+  "jest": {
+    "testMatch": ["**/*test.js"]
   },
   "repository": {
     "type": "git",
