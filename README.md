@@ -1,5 +1,36 @@
 # Exercise
 
+# How to Run
+
+## Local Machine
+### Prerequisite
+* Node 18 or greater
+### Install the dependencies
+* npm install
+### Run the tests
+* npm test
+### Get 20 even ToDos
+* node src/todo-dashboard.js
+### Get 5 even ToDos
+* node src/todo-dashboard.js 5
+### Get 5 even ToDos (using npm bin script)
+* node . 5
+
+## Using Docker
+### Prerequisite
+* Docker or Colima started
+### Build docker image and Start a container
+* docker build -t todo-dashboard . && docker run -itd --name todo-dashboard todo-dashboard
+This will take sometime to build.
+### Run the tests
+* docker exec -it todo-dashboard sh -c "npm test"
+### Get 20 even ToDos
+* docker exec -it todo-dashboard sh -c "node src/todo-dashboard.js"
+### Get 5 even ToDos
+* docker exec -it todo-dashboard sh -c "node src/todo-dashboard.js 5"
+### Get 5 even ToDos (using npm bin script)
+* docker exec -it todo-dashboard sh -c  "node . 5"
+
 The goal of the project is to build a command line tool.
 
 Using Go, write a command line tool that consumes the first `20` `even` numbered TODO's in most performant way and output the `title` and whether it is `completed` or not.
