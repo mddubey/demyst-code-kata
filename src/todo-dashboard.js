@@ -1,6 +1,6 @@
-const { todoRestClient } = require("./todo-rest-client");
-
-todoRestClient.fetchToDo(1)
-    .then((todo => console.log(todo)));
+const { todoService } = require("./todo-service");
 
 console.log("todo-dashboard");
+todoService.fetchToDos(20)
+    .then((todos) => console.log(todos))
+    .catch((error) => console.log("Error while fetching TODOs"));

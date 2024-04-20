@@ -27,5 +27,6 @@ describe('fetchToDo', () => {
     );
 
     await expect(todoRestClient.fetchToDo(5)).rejects.toThrow(errorMessage);
+    expect(axios.get).toHaveBeenCalledWith("https://jsonplaceholder.typicode.com/todos/5");
   });
 });
