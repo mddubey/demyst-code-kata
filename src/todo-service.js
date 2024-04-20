@@ -12,15 +12,17 @@ const findEvenTodoIDs = (limit) => {
     return evenTodoIds;
 }
 
+const extractStatus = (todoData) => {
+    return ({"title": todoData.title, "completed": todoData.completed})
+}
+
 const todoService = {};
 todoService.fetchToDos = async(limit) => {
     //A good idea could be to take a filter function instead of hardcoding to evenIds    
     const evenTodoIds = findEvenTodoIDs(limit);
-    const todoPromises = evenTodoIds.map((todoId) => todoRestClient.fetchToDo(todoId));
+    const todoPromises = evenTodoIds.map(todoRestClient.fetchToDo);
     return Promise.all(todoPromises)
-        .then((todoList) => 
-            todoList.map((todoData) => ({"title": todoData.title, "completed": todoData.completed}))
-        )
+        .then((todoList) => todoList.map(extractStatus))
         .catch((err) => {
             console.error("Error while fetching Todos!", err);
             throw new Error("Error while fetching Todos!");        

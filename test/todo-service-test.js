@@ -19,8 +19,8 @@ describe('fetchToDos', () => {
     
     await expect(todoService.fetchToDos(2)).resolves.toEqual(expectedTodos);    
 
-    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(2);
-    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(4);        
+    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(2, 0, [2, 4]);
+    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(4, 1, [2, 4]);        
   });
 
   it('should not fetch any todos if the limit is 0', async () => {    
@@ -48,8 +48,8 @@ describe('fetchToDos', () => {
     
     await expect(todoService.fetchToDos(2)).rejects.toThrow("Error while fetching Todos!");
 
-    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(2);
-    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(4);        
+    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(2, 0, [2, 4]);
+    expect(todoRestClient.fetchToDo).toHaveBeenCalledWith(4, 1, [2, 4]);        
   });
 
 });
